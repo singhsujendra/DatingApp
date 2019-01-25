@@ -1,3 +1,4 @@
+using System;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
@@ -74,6 +75,7 @@ namespace DatingApp.API.Controllers
             return Ok(new { 
                 token = tokenHandler.WriteToken(token) 
                 });
+
         }
 
     }
