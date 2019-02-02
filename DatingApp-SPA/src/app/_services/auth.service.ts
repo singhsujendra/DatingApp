@@ -23,10 +23,8 @@ import { BehaviorSubject } from 'rxjs';
     this.photoUrl.next(photoUrl);
   }
 
-  login(model: any){
-    return this.http
-      .post(this.baseUrl + 'login', model)
-      .pipe(
+  login(model: any) {
+    return this.http.post(this.baseUrl + 'login', model).pipe(
       map((response: any) => {
         const user = response;
         if (user) {
@@ -40,8 +38,8 @@ import { BehaviorSubject } from 'rxjs';
     );
   }
 
-  register (model: any) {
-    return this.http.post(this.baseUrl + 'register', model);
+  register (user: User) {
+    return this.http.post(this.baseUrl + 'register', user);
   }
 
   loggedIn () {
