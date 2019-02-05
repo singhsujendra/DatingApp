@@ -43,6 +43,7 @@ export class MemberListComponent implements OnInit {
     this.userParams.maxAge = 99;
     this.loadUsers();
   }
+  
   loadUsers() {
     this.userService.getUsers(this.pagination.currentPage, this.pagination.itemsPerPage, this.userParams)
       .subscribe((res: PaginatedResult<User[]>) => {
